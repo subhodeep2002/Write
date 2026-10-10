@@ -11,6 +11,8 @@
   var back = params.get('return') || ''
   var state = params.get('state') || ''
   var multi = params.get('multi') === '1'
+  // set when Write. asks for access to one document it is already linked to
+  var ids = /^[\w,-]+$/.test(params.get('ids') || '') ? params.get('ids') : ''
   // Only ever hand results back to Write. on this Mac
   var validBack = /^http:\/\/127\.0\.0\.1:\d{2,5}\/picked$/.test(back)
 
@@ -42,11 +44,13 @@
       .setAppId(appId)
       .setOAuthToken(token)
       .setDeveloperKey(key)
-      .addView(mine)
-      .addView(drives)
       .enableFeature(google.picker.Feature.SUPPORT_DRIVES)
-      .setTitle(multi ? 'Choose Google Docs for Write.' : 'Choose a Google Doc for Write.')
       .setCallback(onPicked)
+    if (ids) {
+      builder.addView(mine.setFileIds(ids)).setTitle('Select this document and click Select to give Write. access')
+    } else {
+      builder.addView(mine).addView(drives).setTitle(multi ? 'Choose Google Docs for Write.' : 'Choose a Google Doc for Write.')
+    }
     if (multi) builder.enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
     picker = builder.build()
     picker.setVisible(true)
