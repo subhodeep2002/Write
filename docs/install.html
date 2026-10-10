@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install guide | Write.</title>
+<meta name="description" content="How to download Write., install it on your Mac and open it for the first time.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt=""><span>Write<span class="dot">.</span></span></a>
+    <nav>
+      <a href="./">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a class="btn-sm" data-download href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="doc">
+    <h1>Installing Write.</h1>
+    <p class="meta">Takes about a minute</p>
+    <p class="lead-in">Here's everything from downloading the file to opening Write. for the very first time. You'll need a Mac with Apple Silicon (M1 or newer) running macOS 12 Monterey or later.</p>
+
+    <ol class="install">
+      <li id="download">
+        <h3>Download the installer</h3>
+        <p>Click the button below and the file goes straight into your Downloads folder. It's about 140 MB so it may take a moment on a slow connection.</p>
+        <div class="actions">
+          <a class="btn" data-download href="#download">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download for Mac
+          </a>
+        </div>
+      </li>
+      <li>
+        <h3>Drag Write. into Applications</h3>
+        <p>Double-click the file you just downloaded and a small window opens. Drag the Write. icon onto the Applications folder next to it and give it a few seconds to copy.</p>
+        <figure><img src="screenshots/installer.png" alt="The Write. installer window with the app icon and the Applications folder" loading="lazy"></figure>
+        <p>Once it's copied you can eject the installer from the Finder sidebar and move the downloaded file to the Bin.</p>
+      </li>
+      <li>
+        <h3>Open Write.</h3>
+        <p>Open your Applications folder and double-click Write. You can also press <kbd>⌘</kbd> <kbd>Space</kbd>, type Write and press Return.</p>
+      </li>
+      <li id="first-open">
+        <h3>Say yes to macOS the first time</h3>
+        <p>Write. is a free app that isn't registered with Apple's paid developer programme, so macOS asks you to confirm it the first time you open it. When the message appears just click Done and leave the app where it is.</p>
+        <p>Then open System Settings and go to Privacy &amp; Security. Scroll down until you see a note about Write. and click Open Anyway, then confirm with your password or Touch ID. You only ever do this once for each version you download.</p>
+        <details>
+          <summary>Comfortable with Terminal? There's a shortcut</summary>
+          <p>Once Write. is in your Applications folder this command does the same thing in one go.</p>
+          <pre>xattr -dr com.apple.quarantine /Applications/Write.app</pre>
+        </details>
+      </li>
+    </ol>
+
+    <h2>Updating</h2>
+    <p>Download the newest version from this page, drag it into Applications again and choose Replace when you're asked. Your documents and settings stay exactly where they are.</p>
+
+    <h2>Where your documents live</h2>
+    <p>Every document is saved as a .write file in the Write folder inside Documents. If you'd rather keep them in iCloud Drive or Dropbox you can pick a different folder in Settings and everything there gets backed up for you.</p>
+
+    <h2>Using Google Docs</h2>
+    <p>You don't need a Google account to use Write. If you'd like to bring your Google Docs in, open Settings and click Sign in with Google. Importing opens Google's file picker in Google Chrome or Microsoft Edge, because Safari blocks the Google cookies the picker needs.</p>
+
+    <h2>Uninstalling</h2>
+    <p>Quit Write. and drag it from Applications to the Bin. Your documents stay in Documents until you decide to delete them yourself.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Write. (Period), powered by Formula0ne</span>
+    <nav>
+      <a href="./">Home</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="licence.html">Licence</a>
+    </nav>
+    <p>Google Docs and Google Drive are trademarks of Google LLC and Mac is a trademark of Apple Inc. Write. is an independent app that isn't made by or affiliated with either company.</p>
+  </div>
+</footer>
+<script src="download.js"></script>
+</body>
+</html>

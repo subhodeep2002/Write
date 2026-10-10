@@ -4,12 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Write. | The document editor built for Mac</title>
-<meta name="description" content="Write. is a free, dark document editor for Mac that works like Google Docs, even offline. Built for Mac. Stays on your Mac. Free to use.">
+<meta name="description" content="Write. looks and works just like Google Docs but it lives on your Mac, so it keeps working even when your internet doesn't. Free to use.">
 <meta name="theme-color" content="#000000">
-<meta property="og:title" content="Write. | Built for Mac. Stays on your Mac. Free to use.">
-<meta property="og:description" content="A dark, distraction-free document editor that works like Google Docs, even with no internet.">
-<meta property="og:image" content="https://subhodeep2002.github.io/Write/screenshots/editor.png">
-<meta property="og:url" content="https://subhodeep2002.github.io/Write/">
+<meta property="og:title" content="Write. | Built for Mac, stays on your Mac, free to use">
+<meta property="og:description" content="A calm black document editor that works just like Google Docs, even with no internet.">
+<meta property="og:image" content="screenshots/editor.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="home.css">
@@ -24,9 +23,9 @@
       <a href="#features">Features</a>
       <a href="#try">Try it</a>
       <a href="#google">Google Docs</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="install.html">Install guide</a>
     </nav>
-    <a class="btn btn-sm magnetic" data-download href="https://github.com/subhodeep2002/Write/releases/latest">Download</a>
+    <a class="btn btn-sm magnetic" data-download href="install.html">Download</a>
   </div>
   <div class="nav-progress" id="progress"></div>
 </header>
@@ -38,30 +37,30 @@
     <div class="grid grid-lit" aria-hidden="true"></div>
 
     <div class="hero-in">
-      <a class="eyebrow fade" style="--d:0" href="https://github.com/subhodeep2002/Write/releases/latest">
-        <span class="eyebrow-tag">New</span><span>One-click Google Docs sign-in</span><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <a class="eyebrow fade" style="--d:0" href="#google">
+        <span class="eyebrow-tag">New</span><span>Signing in to Google Docs now takes one click</span><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
       </a>
       <h1 class="headline">
-        <span class="line"><span style="--d:1">Built for Mac.</span></span>
-        <span class="line"><span style="--d:2">Stays on your Mac.</span></span>
-        <span class="line muted"><span style="--d:3">Free to use.</span></span>
+        <span class="line"><span style="--d:1">Built for Mac</span></span>
+        <span class="line"><span style="--d:2">Stays on your Mac</span></span>
+        <span class="line muted"><span style="--d:3">Free to use</span></span>
       </h1>
-      <p class="lead fade" style="--d:4">Write. is a dark, distraction-free document editor that works like Google Docs, even with no internet. Document tabs, spelling and grammar, comments, version history and Word export, in one quiet black window.</p>
+      <p class="lead fade" style="--d:4">Write. looks and works just like Google Docs but it lives on your Mac, so it keeps working even when your internet doesn't.</p>
       <div class="cta fade" style="--d:5">
-        <a class="btn magnetic" data-download href="https://github.com/subhodeep2002/Write/releases/latest">
+        <a class="btn magnetic" data-download href="install.html">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Download for Mac
         </a>
         <a class="btn btn-ghost magnetic" href="#try">Try it in your browser</a>
       </div>
-      <p class="meta fade" style="--d:6"><span data-version>Version 1.1.0</span><i></i><span>Apple Silicon</span><i></i><span>macOS 12 or later</span><i></i><span data-size>About 140 MB</span></p>
+      <p class="meta fade" style="--d:6"><span data-version>Version 1.1.0</span><i></i><span>For Apple Silicon Macs</span><i></i><span>macOS 12 or later</span><i></i><span data-size>About 140 MB</span></p>
     </div>
 
     <!-- the Mac -->
     <div class="stage fade" style="--d:6">
       <div class="device" id="device">
         <div class="lid">
-          <div class="screen">
+          <div class="screen" id="screen">
             <div class="menubar" aria-hidden="true">
               <b>Write.</b><span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Tools</span><span class="hide-xs">Help</span>
               <span class="mb-right">
@@ -71,14 +70,15 @@
               </span>
             </div>
             <div class="slides" id="slides">
-              <figure class="slide on"><img src="screenshots/editor.png" width="1600" height="1047" alt="Write. editing a document with document tabs"></figure>
-              <figure class="slide"><img src="screenshots/document-tabs.png" width="1600" height="1047" alt="Document tabs with the tab menu open" loading="lazy"></figure>
-              <figure class="slide"><img src="screenshots/spelling-and-grammar.png" width="1600" height="1047" alt="A spelling suggestion" loading="lazy"></figure>
-              <figure class="slide"><img src="screenshots/right-click-menu.png" width="1600" height="1047" alt="The right-click menu" loading="lazy"></figure>
-              <figure class="slide"><img src="screenshots/download-tabs.png" width="1600" height="1047" alt="Downloading the current tab or all tabs" loading="lazy"></figure>
-              <figure class="slide"><img src="screenshots/version-history.png" width="1600" height="1047" alt="Version history" loading="lazy"></figure>
-              <figure class="slide"><img src="screenshots/home.png" width="1600" height="1047" alt="All your documents" loading="lazy"></figure>
+              <figure class="slide on"><img src="screenshots/editor.png" width="1600" height="1049" alt="Write. editing a document with document tabs"></figure>
+              <figure class="slide"><img src="screenshots/document-tabs.png" width="1600" height="1049" alt="Document tabs with the tab menu open" loading="lazy"></figure>
+              <figure class="slide"><img src="screenshots/spelling-and-grammar.png" width="1600" height="1049" alt="A spelling suggestion" loading="lazy"></figure>
+              <figure class="slide"><img src="screenshots/right-click-menu.png" width="1600" height="1049" alt="The right-click menu" loading="lazy"></figure>
+              <figure class="slide"><img src="screenshots/download-tabs.png" width="1600" height="1049" alt="Downloading the current tab or all tabs" loading="lazy"></figure>
+              <figure class="slide"><img src="screenshots/version-history.png" width="1600" height="1049" alt="Version history" loading="lazy"></figure>
+              <figure class="slide"><img src="screenshots/home.png" width="1600" height="1049" alt="All your documents" loading="lazy"></figure>
             </div>
+            <div class="sheen" id="sheen" aria-hidden="true"></div>
             <div class="glare" aria-hidden="true"></div>
           </div>
         </div>
@@ -87,17 +87,18 @@
       <div class="floor" aria-hidden="true"></div>
 
       <div class="slide-info" id="slideInfo" aria-live="polite">
-        <h3>Write like it's Google Docs</h3>
-        <p>Menus, toolbar, ruler and real pages, in a pure black window.</p>
+        <h3>Feels like Google Docs from the first click</h3>
+        <p>The menus and the toolbar sit right where you'd look for them</p>
       </div>
       <div class="slide-nav" id="slideNav" role="tablist" aria-label="App screens">
-        <button role="tab" class="on" data-title="Write like it's Google Docs" data-text="Menus, toolbar, ruler and real pages, in a pure black window."><span class="bar"></span>Editor</button>
-        <button role="tab" data-title="Document tabs" data-text="One document, many tabs and subtabs. Rename them, reorder them, give them emoji."><span class="bar"></span>Tabs</button>
-        <button role="tab" data-title="Spelling and grammar" data-text="Mistakes are underlined as you type. One click fixes them, right on your Mac."><span class="bar"></span>Spelling</button>
-        <button role="tab" data-title="Right-click anything" data-text="Formatting, links, comments and table tools, right where your cursor is."><span class="bar"></span>Right-click</button>
-        <button role="tab" data-title="Download anything" data-text="Word, PDF, web page, Markdown or plain text. One tab, or all of them."><span class="bar"></span>Download</button>
-        <button role="tab" data-title="Version history" data-text="Every earlier version is kept automatically, so you can always go back."><span class="bar"></span>History</button>
-        <button role="tab" data-title="All your documents" data-text="Saved on your Mac as you type. Search, star and sort them."><span class="bar"></span>Library</button>
+        <span class="slide-ind" id="slideInd" aria-hidden="true"></span>
+        <button role="tab" class="on" data-title="Feels like Google Docs from the first click" data-text="The menus and the toolbar sit right where you'd look for them">Editor</button>
+        <button role="tab" data-title="Document tabs" data-text="Give every chapter its own tab and keep the whole story in one document">Tabs</button>
+        <button role="tab" data-title="Spelling and grammar" data-text="Mistakes are underlined while you type and a single click fixes them">Spelling</button>
+        <button role="tab" data-title="Right-click anything" data-text="The tools you need show up right next to your cursor">Right-click</button>
+        <button role="tab" data-title="Download anything" data-text="Save just one tab or the whole document as a Word file or a PDF">Download</button>
+        <button role="tab" data-title="Version history" data-text="Every earlier version is kept for you so going back only takes a moment">History</button>
+        <button role="tab" data-title="All your documents" data-text="Everything is saved on your Mac as you type and it's always easy to find">Library</button>
       </div>
     </div>
   </section>
@@ -106,16 +107,16 @@
   <section class="statements" aria-label="Why Write.">
     <div class="wrap">
       <div class="statement" data-scrub>
-        <h2>Works like Google&nbsp;Docs.</h2>
-        <p>The menus, toolbar, ruler, pages and document tabs you already know. There's nothing new to learn.</p>
+        <h2>Works like Google&nbsp;Docs</h2>
+        <p>If you've ever used Google Docs you already know your way around, because every menu and button is right where you left it</p>
       </div>
       <div class="statement" data-scrub>
-        <h2>Works with no internet.</h2>
-        <p>Every word is saved on your Mac as you type. No account, no servers, no tracking. Even spelling and grammar are checked on your Mac.</p>
+        <h2>Keeps working offline</h2>
+        <p>Every word is saved on your Mac the moment you type it and nothing ever leaves it, not even for the spell check</p>
       </div>
       <div class="statement" data-scrub>
-        <h2>Works with Google&nbsp;Docs.</h2>
-        <p>Sign in once, bring your Google Docs in and keep them in sync. Only if you want to.</p>
+        <h2>Gets along with Google&nbsp;Docs</h2>
+        <p>Whenever you're ready you can sign in once and bring your Google Docs over, and they'll stay in sync from then on</p>
       </div>
     </div>
   </section>
@@ -125,44 +126,44 @@
     <div class="wrap">
       <div class="section-head" data-reveal>
         <p class="kicker">Features</p>
-        <h2>Everything you need to write.<br><span class="muted">Nothing you don't.</span></h2>
+        <h2>Everything you need to write<br><span class="muted">and nothing that gets in the way</span></h2>
       </div>
       <div class="fgrid" id="fgrid">
         <div class="feat" data-reveal style="--d:0">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8V6.5A1.5 1.5 0 0 1 4.5 5H9l2 3h8.5A1.5 1.5 0 0 1 21 9.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/></svg>
-          <h3>Document tabs</h3><p>Split a long document into tabs and subtabs, like Google Docs. One per chapter, if you like.</p>
+          <h3>Document tabs</h3><p>Split a long piece into tabs and subtabs so every chapter gets a place of its own</p>
         </div>
         <div class="feat" data-reveal style="--d:1">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 18 8.5 6l5 12M5.5 14h6"/><path d="m14.5 15.5 2.5 2.5 4.5-6"/></svg>
-          <h3>Spelling and grammar</h3><p>Checked instantly as you type, on your Mac. Nothing you write is sent anywhere.</p>
+          <h3>Spelling and grammar</h3><p>Checked instantly while you type and all of it happens right on your Mac</p>
         </div>
         <div class="feat" data-reveal style="--d:2">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg>
-          <h3>Real pages</h3><p>Pages, a ruler, margins and page setup for Letter, A4 or Legal. Or go pageless.</p>
+          <h3>Real pages</h3><p>Work on proper pages with a ruler and margins or switch to pageless whenever you like</p>
         </div>
         <div class="feat" data-reveal style="--d:0">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-6 4z"/></svg>
-          <h3>Comments</h3><p>Leave notes and replies next to the text, and resolve them when you're done.</p>
+          <h3>Comments</h3><p>Leave a note beside any line and come back to reply when you're ready</p>
         </div>
         <div class="feat" data-reveal style="--d:1">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1L3.5 8.5"/><path d="M3.5 3.5v5h5M12 7.5V12l3 2"/></svg>
-          <h3>Version history</h3><p>Earlier versions are kept automatically. Look back at any of them and restore it.</p>
+          <h3>Version history</h3><p>Older versions are saved for you automatically so you can bring any of them back</p>
         </div>
         <div class="feat" data-reveal style="--d:2">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11m0 0-4-4m4 4 4-4M4.5 16.5v3h15v-3"/></svg>
-          <h3>Download anything</h3><p>Word, PDF, web page, Markdown or plain text. Open Word and Markdown files too.</p>
+          <h3>Download anything</h3><p>Save your work as Word, PDF or Markdown and open Word files just as easily</p>
         </div>
         <div class="feat" data-reveal style="--d:0">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5 19 10l-6.2 2.2L10.5 19z"/></svg>
-          <h3>Right-click menu</h3><p>Formatting, colours, links, comments and change case, right under your cursor.</p>
+          <h3>Right-click menu</h3><p>The formatting you reach for most pops up right under your cursor</p>
         </div>
         <div class="feat" data-reveal style="--d:1">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="1.5"/><path d="M3 9.5h18M3 14.5h18M9.5 4.5v15"/></svg>
-          <h3>Tables</h3><p>Add rows and columns, merge cells, and sort a whole table A to Z.</p>
+          <h3>Tables</h3><p>Add rows and columns, merge cells or sort a whole table in one go</p>
         </div>
         <div class="feat" data-reveal style="--d:2">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 4 7.5 20M16.5 4l-2 16M4.5 9h16M3.5 15h16"/></svg>
-          <h3>Markdown shortcuts</h3><p>Type # and a space for a heading, or - for a list. Your hands never leave the keys.</p>
+          <h3>Markdown shortcuts</h3><p>Type # and a space for a heading or a dash for a list and keep your hands on the keys</p>
         </div>
       </div>
     </div>
@@ -183,9 +184,9 @@
     <div class="wrap try-in">
       <div class="try-copy" data-reveal>
         <p class="kicker">Try it</p>
-        <h2>Write something.<br><span class="muted">Right here.</span></h2>
-        <p>This is a tiny piece of Write., running in your browser. Select some text and press <kbd>⌘</kbd><kbd>B</kbd>, or start a new line with <kbd>#</kbd> and a space to make a heading.</p>
-        <p class="small-note">The app has the rest: tabs, pages, comments, spelling and grammar, version history and more.</p>
+        <h2>Write something<br><span class="muted">right here on this page</span></h2>
+        <p>This is a small piece of Write. running in your browser. Select a few words and press <kbd>⌘</kbd><kbd>B</kbd> to make them bold, or start a new line with <kbd>#</kbd> and a space to turn it into a heading.</p>
+        <p class="small-note">The real app goes much further with tabs and pages and comments and version history.</p>
       </div>
 
       <div class="win" data-reveal style="--d:1">
@@ -222,7 +223,7 @@
             <h1>The night the light went out</h1>
             <p>The wind had been rising since noon. By the time Anna climbed the ninety-two steps to the lamp room, the sea below was a field of white.</p>
             <p>She checked the wick, trimmed it, and struck a match. <b>Nothing.</b> The glass was cold, and somewhere far out in the dark a ship answered the silence with its horn.</p>
-            <p>Try it: click anywhere and keep writing.</p>
+            <p>Click anywhere and keep writing</p>
           </div>
         </div>
         <div class="win-status"><span id="words">0 words</span><span>Page 1 of 1</span><span class="right">100%</span></div>
@@ -235,14 +236,14 @@
     <div class="wrap">
       <div class="section-head" data-reveal>
         <p class="kicker">Google Docs</p>
-        <h2>Your Google Docs,<br><span class="muted">when you want them.</span></h2>
+        <h2>Your Google Docs<br><span class="muted">whenever you want them</span></h2>
       </div>
       <ol class="steps">
-        <li data-reveal style="--d:0"><span class="n">1</span><div><h3>Sign in once</h3><p>Open Settings and click Sign in with Google. No keys, no setup.</p></div></li>
-        <li data-reveal style="--d:1"><span class="n">2</span><div><h3>Pick your documents</h3><p>Google's own file picker opens in Google Chrome. Choose one document or several.</p></div></li>
-        <li data-reveal style="--d:2"><span class="n">3</span><div><h3>Stay in sync</h3><p>They come in with all their tabs. Edits in Write. sync back, or pause syncing whenever you like.</p></div></li>
+        <li data-reveal style="--d:0"><span class="n">1</span><div><h3>Sign in once</h3><p>Open Settings and click Sign in with Google and that's really all there is to it</p></div></li>
+        <li data-reveal style="--d:1"><span class="n">2</span><div><h3>Pick your documents</h3><p>Google's own file picker opens in Chrome so you can choose one document or as many as you like</p></div></li>
+        <li data-reveal style="--d:2"><span class="n">3</span><div><h3>Stay in sync</h3><p>Your documents arrive with all their tabs and every edit you make flows back to Google Docs unless you pause it</p></div></li>
       </ol>
-      <p class="fine" data-reveal>Write. can only see the Google Docs you pick or create with it, never the rest of your Drive. It talks to Google directly from your Mac; there are no Write. servers. Read the <a href="privacy.html">privacy policy</a>.</p>
+      <p class="fine" data-reveal>Write. can only see the documents you pick or create with it and it talks to Google straight from your Mac with no servers of ours in between. There's more about this in the <a href="privacy.html">privacy policy</a>.</p>
     </div>
   </section>
 
@@ -251,17 +252,17 @@
     <div class="wrap">
       <div class="section-head" data-reveal>
         <p class="kicker">Details</p>
-        <h2>The small print,<br><span class="muted">in big letters.</span></h2>
+        <h2>The details</h2>
       </div>
       <dl class="spec-list" data-reveal>
-        <div><dt>Price</dt><dd>Free. No subscription, no trial, no ads.</dd></div>
+        <div><dt>Price</dt><dd>Free with no subscription and no ads</dd></div>
         <div><dt>Version</dt><dd data-version-plain>1.1.0</dd></div>
-        <div><dt>Works on</dt><dd>Macs with Apple Silicon (M1 or newer), macOS 12 Monterey or later</dd></div>
+        <div><dt>Works on</dt><dd>Apple Silicon Macs running macOS 12 Monterey or later</dd></div>
         <div><dt>Download</dt><dd data-size-plain>About 140 MB</dd></div>
-        <div><dt>Opens</dt><dd>Word (.docx), Markdown, web pages and plain text</dd></div>
-        <div><dt>Saves as</dt><dd>Word, PDF, web page, Markdown, plain text and .write</dd></div>
-        <div><dt>Your documents</dt><dd>Stay on your Mac. No account, no tracking, no analytics.</dd></div>
-        <div><dt>Google Docs</dt><dd>Optional. Importing uses Google Chrome or Microsoft Edge.</dd></div>
+        <div><dt>Opens</dt><dd>Word, Markdown, web pages and plain text</dd></div>
+        <div><dt>Saves as</dt><dd>Word, PDF, web page, Markdown and plain text</dd></div>
+        <div><dt>Your documents</dt><dd>They stay on your Mac and nothing about you is tracked</dd></div>
+        <div><dt>Google Docs</dt><dd>Completely optional and importing uses Google Chrome or Microsoft Edge</dd></div>
       </dl>
     </div>
   </section>
@@ -272,13 +273,13 @@
     <div class="wrap final-in" data-reveal>
       <img src="icon.png" width="96" height="96" alt="Write. app icon">
       <h2>Start writing<span class="dot">.</span></h2>
-      <p>Free for your Mac. Takes a minute to install.</p>
+      <p>It's free and takes about a minute to install</p>
       <div class="cta">
-        <a class="btn magnetic" data-download href="https://github.com/subhodeep2002/Write/releases/latest">
+        <a class="btn magnetic" data-download href="install.html">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Download for Mac
         </a>
-        <a class="btn btn-ghost magnetic" href="https://github.com/subhodeep2002/Write#download-and-install">How to install</a>
+        <a class="btn btn-ghost magnetic" href="install.html">How to install</a>
       </div>
     </div>
   </section>
@@ -288,16 +289,17 @@
   <div class="wrap foot-in">
     <a class="brand" href="./"><img src="icon.png" alt="" width="22" height="22"><span>Write<span class="dot">.</span></span></a>
     <nav>
+      <a href="install.html">Install guide</a>
       <a href="privacy.html">Privacy policy</a>
       <a href="terms.html">Terms</a>
-      <a href="https://github.com/subhodeep2002/Write/releases">Releases</a>
-      <a href="https://github.com/subhodeep2002/Write/issues">Contact</a>
+      <a href="licence.html">Licence</a>
     </nav>
     <p class="copy">© 2026 Write. (Period), powered by Formula0ne</p>
-    <p class="tm">Google Docs and Google Drive are trademarks of Google LLC. Mac is a trademark of Apple Inc. Write. is an independent app and is not made by, affiliated with or endorsed by Google or Apple.</p>
+    <p class="tm">Google Docs and Google Drive are trademarks of Google LLC and Mac is a trademark of Apple Inc. Write. is an independent app that isn't made by or affiliated with either company.</p>
   </div>
 </footer>
 
+<script src="download.js"></script>
 <script src="home.js"></script>
 </body>
 </html>

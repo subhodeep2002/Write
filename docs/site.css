@@ -90,3 +90,39 @@ footer p { margin: 0; width: 100%; }
   .rows > div { grid-template-columns: 1fr; gap: 4px; }
   footer nav { margin-left: 0; }
 }
+
+/* ---------------------------------------------------------------- shared with the home page */
+.btn { border-radius: 999px; }
+.top nav .btn-sm { height: 32px; padding: 0 16px; display: inline-flex; align-items: center; font-size: 14px; color: #000; background: var(--fg); border-radius: 999px; }
+.top nav .btn-sm:hover { background: #fff; color: #000; }
+.top nav { align-items: center; }
+.doc .lead-in { font-size: 19px; color: var(--fg-2); margin: 0 0 8px; }
+.doc ol.install { list-style: none; counter-reset: step; padding: 0; margin: 28px 0 0; border-top: 1px solid var(--line); }
+.doc ol.install > li { counter-increment: step; position: relative; padding: 26px 0 28px 56px; border-bottom: 1px solid var(--line); }
+.doc ol.install > li::before { content: counter(step); position: absolute; left: 0; top: 24px; width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--line-2); border-radius: 50%; color: var(--accent); font-size: 14px; }
+.doc ol.install h3 { margin: 4px 0 8px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--fg); }
+.doc ol.install p { margin: 0 0 10px; }
+.doc figure { margin: 18px 0 6px; }
+.doc figure img { border: 1px solid var(--line-2); border-radius: 12px; }
+.doc code, .doc pre { font: 13.5px/1.6 ui-monospace, "SF Mono", Menlo, monospace; color: var(--fg); }
+.doc pre { margin: 12px 0 0; padding: 14px 16px; border: 1px solid var(--line-2); border-radius: 10px; overflow-x: auto; white-space: pre-wrap; word-break: break-word; }
+.doc pre.licence { white-space: pre-wrap; font-size: 13px; color: var(--fg-2); }
+.doc details { margin-top: 14px; }
+.doc summary { color: var(--accent); cursor: pointer; }
+.doc .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 4px; }
+.doc .actions .btn { display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 22px; }
+kbd { display: inline-block; min-width: 1.6em; padding: 0 0.4em; border: 1px solid var(--line-2); border-radius: 5px; font: 500 0.85em/1.6 -apple-system, sans-serif; color: var(--fg); text-align: center; }
+.dl-note {
+  position: fixed; left: 50%; bottom: 28px; z-index: 60;
+  display: flex; align-items: center; gap: 18px; padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.86); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  border: 1px solid var(--line-2); border-radius: 999px;
+  font-size: 14px; color: var(--fg); white-space: nowrap;
+  opacity: 0; transform: translate(-50%, 16px); pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+.dl-note.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+@media (max-width: 720px) {
+  .dl-note { flex-direction: column; gap: 4px; border-radius: 16px; white-space: normal; text-align: center; width: calc(100% - 32px); }
+  .doc ol.install > li { padding-left: 48px; }
+}

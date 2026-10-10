@@ -104,26 +104,60 @@
   var slides = $$('#slides .slide')
   var nav2 = $('#slideNav')
   var tabs = $$('button', nav2)
+  var ind = $('#slideInd')
   var info = $('#slideInfo')
+  var sheen = $('#sheen')
   var idx = 0
-  var restart = function (el) { el.classList.remove('on'); void el.offsetWidth; el.classList.add('on') }
+  var infoTimer = null
+  var reflow = function (el) { return el.offsetWidth }
+  // the indicator glides under the active tab, then fills while that screen is showing
+  var placeIndicator = function () {
+    var t = tabs[idx]
+    ind.style.width = t.offsetWidth + 'px'
+    ind.style.transform = 'translateX(' + t.offsetLeft + 'px)'
+  }
+  var runIndicator = function () { ind.classList.remove('run'); reflow(ind); ind.classList.add('run') }
+  var setCaption = function () {
+    clearTimeout(infoTimer)
+    info.classList.remove('enter')
+    info.classList.add('leave')
+    infoTimer = setTimeout(function () {
+      $('h3', info).textContent = tabs[idx].dataset.title
+      $('p', info).textContent = tabs[idx].dataset.text
+      info.classList.remove('leave')
+      info.classList.add('enter')
+      reflow(info)
+      info.classList.remove('enter')
+    }, reduce ? 0 : 300)
+  }
   function go(i) {
     var next = (i + slides.length) % slides.length
-    if (next === idx) { restart(tabs[idx]); return }
-    slides[idx].classList.remove('on')
+    if (next === idx) { runIndicator(); return }
+    // forward when moving right (or wrapping round to the start), backward otherwise
+    var dir = next > idx || (idx === slides.length - 1 && next === 0) ? 1 : -1
+    if (idx === 0 && next === slides.length - 1) dir = -1
+    var incoming = slides[next]
+    var outgoing = slides[idx]
+    incoming.style.transition = 'none'
+    incoming.style.setProperty('--dir', dir)
+    incoming.classList.remove('out')
+    reflow(incoming)
+    incoming.style.transition = ''
+    outgoing.style.setProperty('--dir', dir)
+    outgoing.classList.remove('on')
+    outgoing.classList.add('out')
+    setTimeout(function () { if (!outgoing.classList.contains('on')) outgoing.classList.remove('out') }, 1200)
+    incoming.classList.add('on')
     tabs[idx].classList.remove('on')
     tabs[idx].setAttribute('aria-selected', 'false')
     idx = next
-    slides[idx].classList.add('on')
+    tabs[idx].classList.add('on')
     tabs[idx].setAttribute('aria-selected', 'true')
-    restart(tabs[idx])
-    info.classList.add('swap')
-    setTimeout(function () {
-      $('h3', info).textContent = tabs[idx].dataset.title
-      $('p', info).textContent = tabs[idx].dataset.text
-      info.classList.remove('swap')
-    }, 260)
-    // keep the active tab visible on narrow screens
+    placeIndicator()
+    runIndicator()
+    setCaption()
+    if (!reduce) { sheen.classList.remove('go'); reflow(sheen); sheen.classList.add('go') }
+    // keep the active tab in view on narrow screens
     var t = tabs[idx]
     if (nav2.scrollWidth > nav2.clientWidth) nav2.scrollTo({ left: t.offsetLeft - nav2.clientWidth / 2 + t.offsetWidth / 2, behavior: 'smooth' })
   }
@@ -131,8 +165,12 @@
     t.setAttribute('aria-selected', i === 0 ? 'true' : 'false')
     t.addEventListener('click', function () { go(i) })
   })
-  // the progress line under the active tab drives the slideshow
-  nav2.addEventListener('animationend', function (e) { if (e.animationName === 'fill') go(idx + 1) })
+  placeIndicator()
+  runIndicator()
+  window.addEventListener('resize', placeIndicator)
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeIndicator)
+  // when the line under the active tab is full, move on to the next screen
+  ind.addEventListener('animationend', function (e) { if (e.animationName === 'fill') go(idx + 1) })
   var holds = { hover: false, hidden: false, away: false }
   var hold = function (k, v) {
     holds[k] = v
@@ -180,25 +218,6 @@
       el.addEventListener('pointerleave', function () { el.style.transform = '' })
     })
   }
-
-  // ---------------------------------------------------------------- latest release: direct download, version and size
-  fetch('https://api.github.com/repos/subhodeep2002/Write/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
-    .then(function (r) { return r.ok ? r.json() : null })
-    .then(function (d) {
-      if (!d) return
-      var dmg = (d.assets || []).filter(function (a) { return /\.dmg$/i.test(a.name) })[0]
-      var v = String(d.tag_name || '').replace(/^v/i, '')
-      if (dmg) {
-        $$('[data-download]').forEach(function (a) { a.href = dmg.browser_download_url })
-        var mb = 'About ' + Math.round(dmg.size / 1e7) * 10 + ' MB'
-        $$('[data-size], [data-size-plain]').forEach(function (el) { el.textContent = mb })
-      }
-      if (/^\d+(\.\d+)*$/.test(v)) {
-        $$('[data-version]').forEach(function (el) { el.textContent = 'Version ' + v })
-        $$('[data-version-plain]').forEach(function (el) { el.textContent = v })
-      }
-    })
-    .catch(function () {})
 
   // ---------------------------------------------------------------- try-it editor
   var page = $('#page')
