@@ -5,7 +5,7 @@
 <p align="center"><b>A dark, distraction-free document editor for your Mac that works like Google Docs — even offline.</b><br>
 Free to use. Powered by Formula0ne.</p>
 
-<p align="center"><a href="https://github.com/subhodeep2002/Write/releases/latest"><b>⬇ Download Write. for Mac</b></a></p>
+<p align="center"><a href="https://github.com/subhodeep2002/Write/releases/latest"><b>⬇ Download Write. for Mac</b></a> · <a href="https://subhodeep2002.github.io/Write/">Website</a> · <a href="https://subhodeep2002.github.io/Write/privacy.html">Privacy</a></p>
 
 ![Write. editing a document with tabs](docs/screenshots/editor.png)
 
@@ -52,10 +52,10 @@ Macs with an Intel processor aren't supported yet.
 ## Download and install
 
 **Step 1 — Download.**
-Go to the **[Releases page](https://github.com/subhodeep2002/Write/releases/latest)**. Under **Assets**, click the file named **`Write-1.0.0-arm64.dmg`**. It's about 140 MB and goes into your **Downloads** folder.
+Go to the **[Releases page](https://github.com/subhodeep2002/Write/releases/latest)**. Under **Assets**, click the file named **`Write-1.1.0-arm64.dmg`**. It's about 140 MB and goes into your **Downloads** folder.
 
 **Step 2 — Open the file.**
-Double-click **`Write-1.0.0-arm64.dmg`** in Downloads. A window like this appears:
+Double-click **`Write-1.1.0-arm64.dmg`** in Downloads. A window like this appears:
 
 ![The Write. installer window](docs/screenshots/installer.png)
 
@@ -154,48 +154,43 @@ Write. keeps earlier versions of your document automatically. Open **File → Ve
 
 **You don't need a Google account to use Write.** Skip this section if you only want to write on your Mac.
 
-If you'd like Write. to work with your Google Docs, you need to give it permission once. Google asks every app to have its own "key", so you create a free one for yourself in Google's console. It takes about 5 minutes.
+### Connect your Google account (once)
 
-### Part A — Create your free key in Google Cloud
-
-1. Go to **[console.cloud.google.com](https://console.cloud.google.com/)** and sign in with your Google account. Accept the terms if asked.
-2. **Create a project.** Click the project picker at the top of the page, then **New project**. Name it `Write` and click **Create**. Make sure the new project is selected at the top.
-3. **Turn on two Google APIs.** Open the menu ☰ → **APIs & Services → Library**.
-   - Search for **Google Drive API**, open it, and click **Enable**.
-   - Go back, search for **Google Docs API**, open it, and click **Enable**.
-4. **Set up the sign-in screen.** Open ☰ → **Google Auth Platform** (it may be called **OAuth consent screen**) and click **Get started**.
-   - App name: `Write`. User support email: your email.
-   - Audience: **External**.
-   - Contact email: your email. Agree to the policy, then click **Create**.
-5. **Add yourself as a tester.** Still in Google Auth Platform, open **Audience → Test users → Add users**. Enter the Gmail address you'll sign in with, and click **Save**.
-   > ⚠️ If you skip this step, Google shows *"Access blocked … Error 403: access_denied"*.
-6. **Create the key.** Open **Clients** (or **APIs & Services → Credentials → Create credentials → OAuth client ID**).
-   - Application type: **Desktop app**. Name: `Write Mac`. Click **Create**.
-   - Google shows a **Client ID** and a **Client secret**. **Copy both now**, or click **Download JSON**. Google may not show the secret again later.
-
-### Part B — Connect Write.
-
-7. In Write., open **Settings** (press **⌘ ,**). Under **Google Docs**, paste the **Client ID** and the **Client secret**.
+1. In Write., open **Settings** (press **⌘ ,**) and click **Sign in with Google**.
 
    ![Google Docs settings in Write.](docs/screenshots/google-docs-settings.png)
 
-8. Click **Sign in with Google**. Your web browser opens:
-   - Choose your Google account.
-   - Google says *"Google hasn't verified this app"*. That's expected, because it's your own key. Click **Continue**.
-   - Allow access to Google Drive, then return to Write. when the page says *Signed in*.
-9. The first time Write. uses your Google sign-in, macOS may ask for your **Keychain** password. Write. stores your sign-in securely in your Keychain. Type your Mac password and click **Always Allow**.
+2. Your web browser opens. Choose your Google account and click **Continue**. Return to Write. when the page says *Signed in*.
+3. The first time Write. uses your Google sign-in, macOS may ask for your **Keychain** password. Write. keeps your sign-in safe in your Keychain. Type your Mac password and click **Always Allow**.
+
+That's all. No keys, no setup.
 
 ### Using sync
 
-- **Bring in a Google Doc:** on the home screen, click **Import from Google Docs** (or press **⇧ ⌘ O**). All of its tabs come along, and it stays linked.
+- **Bring in Google Docs:** on the home screen, click **Import from Google Docs** (or press **⇧ ⌘ O**). Google's file picker opens in **Google Chrome**. Choose one or more documents and click **Select**. They come into Write. with all their tabs, and they stay linked.
+  > Importing needs [Google Chrome](https://www.google.com/chrome/) (or Microsoft Edge), signed in to the same Google account. Google's file picker doesn't work in Safari, because Safari blocks the Google cookies it needs. You can keep using Safari for everything else.
 - **Send a document to Google Docs:** in a document, click **Save to Google Docs** at the top right.
 - **Automatic sync:** linked documents sync a few seconds after you stop typing. To sync only when you decide, click **⌄** next to the sync button and choose **Pause auto-sync**. Then click **Sync now** whenever you want.
 - If a document was changed in both places, Write. asks which version to keep. Nothing is thrown away: older versions stay in version history.
 
 > **Good to know:**
-> - Keep your Client secret private, and don't share it with anyone.
-> - While your Google project is in "Testing" mode, Google asks you to sign in again every 7 days. Just click **Sign in with Google** in Settings when that happens.
+> - Write. can only see the Google Docs you choose or create with it, never the rest of your Drive. It talks to Google directly from your Mac. See the [privacy policy](https://subhodeep2002.github.io/Write/privacy.html).
 > - Text, styles, lists and tabs sync both ways. Images and tables come in from Google Docs, but new images and table edits made in Write. stay on your Mac.
+> - You can remove Write.'s access at any time in your [Google Account](https://myaccount.google.com/connections).
+
+<details>
+<summary>For advanced users: use your own Google Cloud key instead</summary>
+
+Most people don't need this. With your own key, Write. lists all your Google Docs itself instead of using Google's file picker.
+
+1. In the [Google Cloud console](https://console.cloud.google.com/), create a project and enable the **Google Drive API** and the **Google Docs API** (☰ → **APIs & Services → Library**).
+2. Open **Google Auth Platform** → **Get started**. Audience: **External**. Then **Audience → Test users → Add users** and add the Gmail address you'll sign in with.
+3. Open **Clients → Create client**. Application type: **Desktop app**. Copy the **Client ID** and **Client secret**.
+4. In Write., open **Settings**, click **Advanced: use your own Google Cloud key**, paste both, and click **Sign in with Google**. Google says the app isn't verified because it's your own key; click **Continue**.
+
+Keep your Client secret private. While your project is in "Testing" mode, Google asks you to sign in again every 7 days.
+
+</details>
 
 ---
 
@@ -223,8 +218,10 @@ Your documents never leave your Mac unless you turn on Google Docs sync.
 | What you see | What to do |
 | --- | --- |
 | *"Write." can't be opened* or *Apple could not verify…* | Follow [Opening it for the first time](#opening-it-for-the-first-time). |
-| *"Access blocked: Write has not completed the Google verification process" (Error 403)* | Add your Gmail address under **Audience → Test users** (Part A, step 5). |
-| *"Turn on the Google Docs API…"* | Enable the **Google Docs API** in your Google Cloud project (Part A, step 3). |
+| *"Write. needs your permission to open this Google Doc"* | Click **Give access**, then select the document in Google's file picker. This can happen once for documents linked with an older version of Write. |
+| *"Importing needs Google Chrome"* | Install [Google Chrome](https://www.google.com/chrome/) and sign in to your Google account in it, then click **Import from Google Docs** again. |
+| The picker in Chrome says *"Can't access your Google Account"* | Sign in to Chrome with the same Google account you connected in Write. If it still appears, allow third-party cookies for `docs.google.com` in Chrome's settings. |
+| *"Access blocked … Error 403"* or *"Turn on the Google Docs API…"* (own key only) | See the advanced steps under [Google Docs sync](#google-docs-sync-optional): add yourself as a test user and enable both APIs. |
 | macOS asks for your **Keychain** password | Type your Mac password and click **Always Allow**. |
 | The app won't open on an older Mac | Write. needs an Apple Silicon Mac (M1 or newer) with macOS 12 or later. |
 
@@ -240,5 +237,7 @@ Releases: **https://github.com/subhodeep2002/Write/releases**
 Write. is **free to download and use**. You may share the link to this page, but you may not sell, change or redistribute the app. The source code is private. See [LICENSE](LICENSE) for the full terms.
 
 Write. is built with open-source software, listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+Read the [privacy policy](https://subhodeep2002.github.io/Write/privacy.html) and the [terms of use](https://subhodeep2002.github.io/Write/terms.html).
 
 Google Docs and Google Drive are trademarks of Google LLC. Write. is an independent app and is not made by, affiliated with or endorsed by Google.
