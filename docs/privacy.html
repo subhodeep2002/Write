@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — Write.</title>
+<meta name="description" content="How Write. handles your documents and your Google account data.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt=""><span>Write<span class="dot">.</span></span></a>
+    <nav>
+      <a href="./" class="hide-sm">Home</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://github.com/subhodeep2002/Write/releases/latest">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="doc">
+    <h1>Privacy policy</h1>
+    <p class="meta">Effective 10 October 2026</p>
+
+    <p>Write. (Period), powered by Formula0ne ("Write.", "we") is a free document editor for macOS. This policy explains what data Write. uses, and why. The short version:</p>
+    <p class="note">Write. has no servers and no accounts of its own. Your documents stay on your Mac. If you connect Google Docs, your Mac talks to Google directly, and only about the documents you choose. We never see, collect, sell or share your data.</p>
+
+    <h2>Data stored on your Mac</h2>
+    <ul>
+      <li><strong>Your documents</strong> are saved as <code>.write</code> files in your library folder (normally <code>Documents/Write</code>, or a folder you pick).</li>
+      <li><strong>Settings, version history and your personal dictionary</strong> are saved in <code>~/Library/Application Support/Write.</code></li>
+      <li><strong>Spelling and grammar</strong> are checked on your Mac. Your text is not sent anywhere to be checked.</li>
+    </ul>
+    <p>None of this is sent to us. Write. contains no analytics, advertising, tracking or crash-reporting code.</p>
+
+    <h2>Google user data</h2>
+    <p>Connecting a Google account is optional. If you click <strong>Sign in with Google</strong>, Write. asks Google for these permissions:</p>
+    <ul>
+      <li><strong>Your email address</strong> (<code>openid</code>, <code>email</code>), only to show which account is connected.</li>
+      <li><strong>Access to the Google Drive files you use with Write.</strong> (<code>drive.file</code>). This covers only the Google Docs you choose in Google's file picker and the documents you create with Write. Write. cannot see or open any other file in your Google Drive.</li>
+    </ul>
+
+    <p><strong>What Write. reads and changes.</strong> For the documents you choose or create with Write., it reads their name, last-modified time, web link and content (text, formatting, tabs, lists, tables and images). It changes them only when you ask it to: when you save a document to Google Docs, sync a linked document, or turn on automatic sync for it.</p>
+
+    <p><strong>How it is used.</strong> Only to provide the features you use in the app: importing Google Docs, keeping linked documents in sync in both directions, and creating new Google Docs from your documents. Google user data is not used for anything else.</p>
+
+    <p><strong>Where it is stored.</strong> Imported documents are stored on your Mac as described above. Your Google sign-in token is stored on your Mac only, encrypted with your macOS Keychain. Data moves directly between your Mac and Google over an encrypted HTTPS connection. It never passes through any server run by us.</p>
+
+    <p><strong>Sharing.</strong> We do not share, transfer, sell or disclose Google user data to anyone. It is not used for advertising, not used to build user profiles, and not used to develop, improve or train artificial-intelligence or machine-learning models. No person reads it.</p>
+
+    <p><strong>Limited Use.</strong> Write.'s use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+    <h2>The file picker page</h2>
+    <p>When you import or link a Google Doc, Write. opens <code>subhodeep2002.github.io/Write/picker.html</code> in your web browser, which shows Google's file picker. Write. hands the page a short-lived Google access token in the part of the address after <code>#</code>, which browsers do not send to websites. The page uses the token only to show the picker, removes it from the address bar straight away, and sends the IDs and names of the documents you choose back to Write. on your own Mac (<code>127.0.0.1</code>). Nothing is stored on that page.</p>
+    <p>This website is hosted by GitHub Pages. GitHub may record standard technical information about visits, such as IP addresses, as described in the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. The website uses no cookies and no analytics of its own.</p>
+
+    <h2>Keeping and deleting your data</h2>
+    <ul>
+      <li><strong>Sign out</strong> in Write. (Settings → Google Docs → Sign out) to delete your Google sign-in token from your Mac.</li>
+      <li><strong>Remove Write.'s access</strong> at any time from your Google Account: <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>.</li>
+      <li><strong>Delete documents</strong> by moving them to the Trash in Write., or by deleting the files in your library folder.</li>
+      <li>Documents in your Google Drive are kept by Google until you delete them there.</li>
+    </ul>
+    <p>Because we never receive your data, there is nothing for us to keep or delete on our side.</p>
+
+    <h2>Children</h2>
+    <p>Write. is not directed at children under 13, and we do not knowingly collect any data from anyone.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version will be posted on this page with a new effective date. If a change affects how Google user data is used, Write. will ask for your consent again before using it in the new way.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy? Open an issue at <a href="https://github.com/subhodeep2002/Write/issues">github.com/subhodeep2002/Write/issues</a>.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Write. (Period), powered by Formula0ne</span>
+    <nav>
+      <a href="./">Home</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://github.com/subhodeep2002/Write/issues">Contact</a>
+    </nav>
+    <p>Google Docs and Google Drive are trademarks of Google LLC. Write. is an independent app and is not made by, affiliated with or endorsed by Google.</p>
+  </div>
+</footer>
+</body>
+</html>

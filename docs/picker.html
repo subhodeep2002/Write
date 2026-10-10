@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Choose Google Docs — Write.</title>
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
+<style>
+  body { min-height: 100vh; display: flex; flex-direction: column; }
+  .pick { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; }
+  .pick img { width: 72px; height: 72px; margin-bottom: 22px; }
+  .pick h1 { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 8px; }
+  .pick p { color: var(--fg-2); margin: 0 0 6px; max-width: 520px; }
+  .pick .btn { margin-top: 18px; }
+  .spin { width: 22px; height: 22px; border: 2px solid var(--line-2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.9s linear infinite; margin: 18px auto 0; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main class="pick">
+  <img src="icon.png" alt="Write. app icon">
+  <h1 id="title">Opening Google’s file picker…</h1>
+  <p id="msg">Choose the Google Docs you want to use in Write.</p>
+  <div class="spin" id="spin"></div>
+  <a class="btn" id="back" hidden>Return to Write.</a>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Write. only gets access to the documents you choose.</span>
+    <nav><a href="privacy.html" target="_blank" rel="noopener">Privacy policy</a></nav>
+  </div>
+</footer>
+<script src="picker.js"></script>
+<script src="https://apis.google.com/js/api.js" onload="writePickerStart()" onerror="writePickerFailed()" async defer></script>
+</body>
+</html>
