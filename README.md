@@ -52,10 +52,10 @@ Macs with an Intel processor aren't supported yet.
 ## Download and install
 
 **Step 1 — Download.**
-Go to the **[Releases page](https://github.com/subhodeep2002/Write/releases/latest)**. Under **Assets**, click the file named **`Write-1.1.0-arm64.dmg`**. It's about 140 MB and goes into your **Downloads** folder.
+Go to the **[Releases page](https://github.com/subhodeep2002/Write/releases/latest)**. Under **Assets**, click the file named **`Write-1.1.1-arm64.dmg`**. It's about 140 MB and goes into your **Downloads** folder.
 
 **Step 2 — Open the file.**
-Double-click **`Write-1.1.0-arm64.dmg`** in Downloads. A window like this appears:
+Double-click **`Write-1.1.1-arm64.dmg`** in Downloads. A window like this appears:
 
 ![The Write. installer window](docs/screenshots/installer.png)
 

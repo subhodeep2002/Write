@@ -5,7 +5,7 @@
   // The buttons start the download right here. Until the newest version is looked up,
   // they use the file below (keep it in step with each release).
   var DOWNLOAD = {
-    file: 'https://github.com/subhodeep2002/Write/releases/download/v1.1.0/Write-1.1.0-arm64.dmg',
+    file: 'https://github.com/subhodeep2002/Write/releases/download/v1.1.1/Write-1.1.1-arm64.dmg',
     latest: 'https://api.github.com/repos/subhodeep2002/Write/releases/latest',
   }
   $$('[data-download]').forEach(function (a) {
